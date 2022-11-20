@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.pl.df</groupId>
+        <artifactId>example-webflux-ms</artifactId>
+        <relativePath>../example-webflux-ms</relativePath>
+        <version>0.0.1</version>
+    </parent>
+
+    <!--<packaging>jar</packaging>-->
+
+    <groupId>com.pl.df.lib</groupId>
+    <artifactId>example-webflux-ms-lib</artifactId>
+    <version>0.0.1-lib</version>
+    <name>example-webflux-ms-lib</name>
+    <description>Webflux microservice lib example</description>
+
+</project>
