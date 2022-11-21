@@ -25,6 +25,14 @@ public class RouteConfiguration {
         return routeLocatorBuilder
                 .routes()
                 .route(routeSpec -> routeSpec
+                                .path("/logout", "/login")                           // http://localhost:8080/public
+//                        .filters(fs ->
+//                                fs.requestRateLimiter(rl -> rl.setRateLimiter(redisRateLimiter())
+//                                        .setKeyResolver(principalNameKeyResolver()))
+//                        )
+                                .uri("lb://gateway/")
+                )
+                .route(routeSpec -> routeSpec
                                 .path("/public")                           // http://localhost:8080/public
 //                        .filters(fs ->
 //                                fs.requestRateLimiter(rl -> rl.setRateLimiter(redisRateLimiter())
