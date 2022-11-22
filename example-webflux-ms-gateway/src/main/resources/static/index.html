@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Microservice orchestration example</title>
+    </head>
+    <body>
+        <h1>Microservice orchestration example</h1>
+
+        <div>Eureka Server</div>
+        <ul>
+            <li><a href="http://localhost:8761/">http://localhost:8761/</a></li>
+        </ul>
+
+        <div>Gateway APIs:</div>
+        <ul id="gateway-api">
+            <li><a href="http://localhost:8080/">http://localhost:8080/</a></li>
+            <li><a href="http://localhost:8080/public">http://localhost:8080/public</a></li>
+            <li><a href="http://localhost:8080/product">http://localhost:8080/product</a> (require role: USER or ADMIN)</li>
+            <li><a href="http://localhost:8080/product/1">http://localhost:8080/product/1</a> (require role: USER or ADMIN)</li>
+            <li><a href="http://localhost:8080/product-details">http://localhost:8080/product-details</a> (require role: ADMIN)</li>
+            <li><a href="http://localhost:8080/product-details/1">http://localhost:8080/product-details/1</a> (require role: ADMIN)</li>
+            <li><a href="http://localhost:8080/login">http://localhost:8080/login</a></li>
+            <li><a href="http://localhost:8080/logout">http://localhost:8080/logout</a></li>
+        </ul>
+
+        <div>Product APIs:</div>
+        <ul id="product-api">
+            <li><a href="http://localhost:8091/public">http://localhost:8091/public</a></li>
+            <li><a href="http://localhost:8091/product">http://localhost:8091/product</a></li>
+            <li><a href="http://localhost:8091/product/1">http://localhost:8091/product/1</a></li>
+        </ul>
+
+        <div>Product Detail APIs:</div>
+        <ul id="product-details-api">
+            <li><a href="http://localhost:8092/product-details">http://localhost:8092/product-details</a></li>
+            <li><a href="http://localhost:8092/product-details/1">http://localhost:8092/product-details/1</a></li>
+        </ul>
+
+    </body>
+</html>

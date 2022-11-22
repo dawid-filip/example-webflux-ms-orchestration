@@ -21,7 +21,7 @@ public class SecurityConfiguration {
                 .formLogin()
                 .and()
                 .authorizeExchange(ae -> ae
-                        .pathMatchers("/public", "/login", "/logout")
+                        .pathMatchers("/public", "/login", "/logout", "/", "/index.html")
                         .permitAll()
                 )
                 .authorizeExchange(ae -> ae
