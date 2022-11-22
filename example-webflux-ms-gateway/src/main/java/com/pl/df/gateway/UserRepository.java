@@ -23,6 +23,7 @@ public class UserRepository implements ReactiveUserDetailsService, ReactiveUserD
         users.add(new User("guest", "$2a$12$kSCGkhEDG5HWliog/0fEm.jWemtJ5UnLXgc.X0VzITOjuhrFNVYPa", true, List.of()));  // pssword
         users.add(new User("user", "$2a$12$kSCGkhEDG5HWliog/0fEm.jWemtJ5UnLXgc.X0VzITOjuhrFNVYPa", true, List.of("ROLE_USER")));   // pssword
         users.add(new User("admin", "$2a$12$kSCGkhEDG5HWliog/0fEm.jWemtJ5UnLXgc.X0VzITOjuhrFNVYPa", true, List.of("ROLE_USER", "ROLE_ADMIN")));   // pssword
+        users.add(new User("inactive", "$2a$12$kSCGkhEDG5HWliog/0fEm.jWemtJ5UnLXgc.X0VzITOjuhrFNVYPa", false, List.of("ROLE_USER_INACTIVE")));   // pssword
     }
 
     @Override

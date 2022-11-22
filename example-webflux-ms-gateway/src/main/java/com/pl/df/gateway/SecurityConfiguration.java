@@ -4,12 +4,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 
 @Configuration
+@EnableWebFluxSecurity
 public class SecurityConfiguration {
 
     @Bean
@@ -20,12 +22,17 @@ public class SecurityConfiguration {
                 .and()
                 .authorizeExchange(ae -> ae
                         .pathMatchers("/public", "/login", "/logout")
-                                .permitAll()
-                        .pathMatchers("/product").authenticated()
-                        .pathMatchers("/product/**").authenticated()
-                        .pathMatchers("/product-details").authenticated()
-                        .pathMatchers("/product-details/**").authenticated()
-//                        .anyExchange().permitAll() // "/public" -> permitAll
+                        .permitAll()
+                )
+                .authorizeExchange(ae -> ae
+                        .pathMatchers("/product", "/product/**")
+                        .hasAnyRole("USER", "ADMIN")
+                )
+                .authorizeExchange(ae -> ae
+                        .pathMatchers("/product-details", "/product-details/**")
+                        .hasAnyRole("ADMIN")
+                        .anyExchange()
+                        .authenticated()
                 )
                 .logout()
                 .and()
